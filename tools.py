@@ -20,4 +20,18 @@ def web_search(query:str)->str:
     )
     return "\n\n".join(output)        
 
-print(web_search.invoke("What are the Current International Oil Prices. Also tell me the actual price in which Pakistan buy 1 litre of oil in pkr except all those lavies and taxes."))
+@tool
+def scrap_url(url:str)->str:
+    """Scrape and return clean content frpm a given URL for deeper reading."""
+    try:
+        resp=requests.get(url,timeout=8,headers={"User-Agent":"Mozilla/5.0"})  #Sent URl and set a time for 8s, if website doesnot open within 8 
+                                                                               #sec, Error wil occur and also send header so that it looked like
+                                                                               #real User is opening the website
+        soup=BeautifulSoup(resp.text,"html.parser")                            #Save The beautiful soup output. 
+        for tag in soup(['scripts','style','nav','footer']):                   #Remove extra content from html page like header, footer and other things.
+            tag.decompose()
+        return soup.get_text(separator=" ",strip=True)[:3000]                  #Get text from remaining blocks 
+    except Exception as e:
+        return f"Could not Scrap URL: {str(e)}"
+
+print(scrap_url.invoke("https://www.bbc.com/"))
