@@ -66,7 +66,3 @@ def run_research_pipeline(topic: str) -> dict:
 if __name__ == "__main__":
     topic = input("Enter the research topic: ")
     result = run_research_pipeline(topic)
-    print("\n===== REPORT =====\n")
-    print(result["report"])
-    print("\n===== CRITIC FEEDBACK =====\n")
-    print(result["feedback"])
