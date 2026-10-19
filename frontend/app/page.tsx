@@ -72,8 +72,7 @@ export default function Home() {
           onClear={handleClear}
         />
       </div>
-
-      <footer className="footer">Built with Next.js and LangChain</footer>
+      
     </main>
   );
 }
