@@ -28,6 +28,6 @@ def scrap_url(url:str)->str:
         soup=BeautifulSoup(resp.text,"html.parser")                            #Save The beautiful soup output. 
         for tag in soup(['scripts','style','nav','footer']):                   #Remove extra content from html page like header, footer and other things.
             tag.decompose()
-        return soup.get_text(separator=" ",strip=True)[:3000]                  #Get text from remaining blocks 
+        return soup.get_text(separator=" ",strip=True)[:1000]                  #Get text from remaining blocks 
     except Exception as e:
         return f"Could not Scrap URL: {str(e)}"
