@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Multi-Agent Research Assistant",
-  description: "Ask any question. AI agents will search, read, write and review for you.",
+  description: "Ask any question. AI agents search, read, write and review.",
 };
 
 export default function RootLayout({
