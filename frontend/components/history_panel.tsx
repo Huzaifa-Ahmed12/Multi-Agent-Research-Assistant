@@ -27,7 +27,7 @@ export default function HistoryPanel({
   return (
     <aside className="card history">
       <div className="history-head">
-        <h2 className="section-title">Recent research</h2>
+        <h2 className="section-title">Recent Research</h2>
         {items.length > 0 && (
           <button type="button" className="link-btn" onClick={onClear}>
             Clear
