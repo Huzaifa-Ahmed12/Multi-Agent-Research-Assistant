@@ -1,9 +1,10 @@
 import type { ResearchResult } from "./types";
+const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "/api/backend";
 
 export async function runResearch(topic: string): Promise<ResearchResult> {
   let res: Response;
   try {
-    res = await fetch("/api/backend/research", {
+    res = await fetch(`${API_URL}/research`,{
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ topic }),
