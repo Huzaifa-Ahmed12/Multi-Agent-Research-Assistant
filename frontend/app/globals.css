@@ -167,3 +167,5 @@ button { font: inherit; }
   .spinner { animation-duration: 2s; }
   * { transition: none !important; }
 }
+/* ---------- Auto-scroll targets ---------- */
+.scroll-target { scroll-margin-top: 20px; }
